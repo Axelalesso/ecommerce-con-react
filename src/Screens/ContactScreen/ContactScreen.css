@@ -1,0 +1,115 @@
+
+/* Inputs generales */
+input {
+  width: 90%;
+  max-width: 350px;
+  padding: 10px;
+  margin: 8px auto;
+  display: block;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  transition: border 0.3s ease;
+}
+
+input:focus {
+  border-color: #201cd6;
+  outline: none;
+}
+
+/* Título principal */
+.titulo-contact {
+  color: #111;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 40px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Botón de inicio */
+.inicio {
+  display: block;
+  margin: 20px auto;
+  padding: 12px;
+  background-color: #0D51BF;
+  color: red;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  width: 60%;
+  max-width: 320px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.inicio:hover {
+    transform: scale(1.05);
+}
+
+
+/* Botón de registro */
+.registro {
+  display: block;
+  margin: 20px auto;
+  padding: 12px;
+  background-color: #0D51BF;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  width: 60%;
+  max-width: 320px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.registro:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* Subtítulo */
+.titulo2 {
+  text-align: center;
+  font-family: "Funnel Display", sans-serif;
+  color: red;
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+/* Etiquetas de los inputs */
+.estilos_input {
+  display: block;
+  color: white;
+  font-family: "Funnel Display", sans-serif;
+  margin: 8px auto 4px auto;
+  font-size: 14px;
+  width: 90%;
+  max-width: 350px;
+}
+
+/* Botón contacto */
+.boton-contact {
+  display: block;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin: 20px auto;
+  padding: 10px;
+  width: 50%;
+  max-width: 200px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.boton-contact:hover {
+  background-color: #f4f4f4;
+  transform: scale(1.05);
+}

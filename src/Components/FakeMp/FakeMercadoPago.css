@@ -1,0 +1,52 @@
+.mp-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.mp-modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  width: 320px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.mp-logo {
+  width: 140px;
+  margin-bottom: 15px;
+}
+
+.mp-price {
+  font-size: 1.2rem;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+.mp-button {
+  background: #009ee3;
+  color: #fff;
+  padding: 10px;
+  width: 50%;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.mp-button:hover {
+  background: #007bb8;
+}
+
+.mp-cancel {
+  background: transparent;
+  border: none;
+  color: #555;
+  cursor: pointer;
+}

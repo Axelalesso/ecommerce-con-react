@@ -1,0 +1,58 @@
+.product-detail {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.titulo_detalle {
+  font-family: 'Roboto', sans-serif;
+  color: red;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.texto {
+    font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.precio {
+    font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.buy-button {
+  background: linear-gradient(to right, #0000ff, #00008b);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.buy-button:hover {
+  opacity: 0.9;
+}
+
+.product-image img {
+  flex: 1;
+  max-width: 350px;
+  width: 100%;
+  border-radius: 12px;
+}
