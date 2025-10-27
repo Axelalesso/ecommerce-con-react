@@ -2,15 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { getProductById } from '../../services/products'
 import Navbar from '../../Components/Navbar/Navbar'
-import FakeMercadoPago from '../../Components/FakeMp/FakeMercadoPago'
-
 import './ProductDetailScreen.css'
 
 const ProductDetailScreen = () => {
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
-  const [showModal, setShowModal] = useState(false)
+
 
   const { product_id } = useParams()
 
@@ -44,10 +42,29 @@ const ProductDetailScreen = () => {
 
           <button
             className="buy-button"
-            onClick={() => setShowModal(true)}
-          >
-            Comprar con Mercado Pago
-          </button>
+            onClick={async () => {
+            try {
+            const response = await fetch("http://localhost:3001/create_preference", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+            title: product.title,
+            price: product.final_price,
+          }),
+        });
+
+        const data = await response.json();
+        if (data.id) {
+        window.location.href = `https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=${data.id}`;
+      }
+      } catch (err) {
+      console.error("Error en pago:", err);
+      alert("Hubo un error al iniciar el pago.");
+      }
+    }}
+    >
+    Comprar con Mercado Pago
+    </button>
         </div>
 
         <div className="product-image">
@@ -65,12 +82,6 @@ const ProductDetailScreen = () => {
     <div>
       <Navbar />
       {content}
-      {showModal && (
-        <FakeMercadoPago
-          product={{ title: product.title, final_price: product.final_price }}
-          onClose={() => setShowModal(false)}
-        />
-      )}
     </div>
   )
 }
