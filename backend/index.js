@@ -3,15 +3,19 @@ import cors from "cors";
 import { MercadoPagoConfig, Preference } from "mercadopago";
 
 const app = express();
-app.use(cors());
+
+app.use(cors({
+  origin: "https://ecommerce-con-react-one.vercel.app",
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+}));
+
 app.use(express.json());
 
-// 🔹 Configura tu Access Token de prueba
 const client = new MercadoPagoConfig({
   accessToken: "APP_USR-6406642486911375-090807-48ed1f26868df9dc88521f278cea4020-2664632384",
 });
 
-// 🔹 Endpoint para crear la preferencia
 app.post("/create-preference", async (req, res) => {
   try {
     const { title, price, quantity } = req.body;
@@ -25,7 +29,6 @@ app.post("/create-preference", async (req, res) => {
           currency_id: "ARS",
         },
       ],
-      // 👇 Campo correcto
       back_urls: {
         success: "https://ecommerce-con-react-one.vercel.app/success",
         failure: "https://ecommerce-con-react-one.vercel.app/failure",
@@ -48,6 +51,5 @@ app.post("/create-preference", async (req, res) => {
   }
 });
 
-app.listen(3001, () => {
-  console.log("✅ Servidor backend corriendo en http://localhost:3001");
-});
+export default app;
+
