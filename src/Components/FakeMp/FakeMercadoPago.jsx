@@ -14,7 +14,7 @@ const FakeMercadoPago = ({ product, onClose }) => {
 
   const handlePay = async () => {
     try {
-      const res = await fetch('https://ecommerce-con-react-one.vercel.app/create-preference', {
+      const res = await fetch('/api/create-preference', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
