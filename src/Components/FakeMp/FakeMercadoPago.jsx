@@ -14,7 +14,7 @@ const FakeMercadoPago = ({ product, onClose }) => {
 
   const handlePay = async () => {
     try {
-      const res = await fetch('https://ecommerce-backend-production.up.railway.app/create-preference', {
+      const res = await fetch('https://ecommerce-backend-ten-mu.vercel.app', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
