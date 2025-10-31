@@ -64,15 +64,6 @@ const FakeMercadoPago = ({ product, onClose }) => {
 };
 
 
-useEffect(() => {
-  // Bloquea scroll al abrir el modal
-  document.body.classList.add("modal-open");
-
-  return () => {
-    // Restaura scroll al cerrar
-    document.body.classList.remove("modal-open");
-  };
-}, []);
 
 
 export default FakeMercadoPago;
