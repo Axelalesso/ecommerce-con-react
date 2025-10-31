@@ -50,3 +50,24 @@
   color: #555;
   cursor: pointer;
 }
+
+/* 🔒 Evita que el fondo se mueva o parpadee */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* ✨ Suaviza la aparición del modal */
+.mp-overlay {
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
