@@ -1,73 +1,85 @@
+/* Fondo oscuro y suave */
 .mp-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.65);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  animation: fadeIn 0.25s ease;
 }
 
+/* Cuerpo del modal */
 .mp-modal {
   background: #fff;
-  padding: 20px;
-  border-radius: 16px;
-  width: 320px;
+  padding: 28px;
+  border-radius: 18px;
+  width: 340px;
   text-align: center;
-  font-family: 'Roboto', sans-serif;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  animation: popUp 0.25s ease;
 }
 
 .mp-logo {
-  width: 140px;
+  width: 130px;
   margin-bottom: 15px;
+}
+
+.mp-title {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #222;
 }
 
 .mp-price {
   font-size: 1.2rem;
-  margin: 15px 0;
+  margin: 12px 0 18px;
   font-weight: bold;
+  color: #111;
 }
 
-.mp-button {
-  background: #009ee3;
-  color: #fff;
-  padding: 10px;
-  width: 50%;
-  border: none;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  cursor: pointer;
+.mp-wallet {
+  margin-bottom: 15px;
 }
 
-.mp-button:hover {
-  background: #007bb8;
-}
-
+/* Botón de cancelar */
 .mp-cancel {
-  background: transparent;
+  background: none;
   border: none;
-  color: #555;
+  color: #777;
+  font-weight: 500;
   cursor: pointer;
+  transition: color 0.2s;
+}
+.mp-cancel:hover {
+  color: #000;
 }
 
-/* 🔒 Evita que el fondo se mueva o parpadee */
-body.modal-open {
-  overflow: hidden;
-}
-
-/* ✨ Suaviza la aparición del modal */
-.mp-overlay {
-  animation: fadeIn 0.25s ease;
-}
-
+/* Suaviza la aparición */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: scale(0.97);
   }
   to {
     opacity: 1;
-    transform: scale(1);
   }
+}
+
+@keyframes popUp {
+  from {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Bloquear scroll cuando el modal está abierto */
+body.modal-open {
+  overflow: hidden;
 }
